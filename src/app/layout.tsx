@@ -1,3 +1,4 @@
+import { Header } from '@/components'
 import '@/styles/index.scss'
 import { nunito } from '@/utils'
 
@@ -13,7 +14,10 @@ interface Props {
 function RootLayout({ children }: Props) {
   return (
     <html lang='en' className={`${nunito.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

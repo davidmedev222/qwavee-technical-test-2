@@ -1,0 +1,14 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.link {
+  display: block;
+  @include text(lg);
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $pink-300;
+  }
+}

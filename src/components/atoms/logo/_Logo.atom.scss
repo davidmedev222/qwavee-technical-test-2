@@ -1,0 +1,18 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.logo {
+  @include text(2xl);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+
+  &__image {
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    @include text(3xl);
+  }
+}
