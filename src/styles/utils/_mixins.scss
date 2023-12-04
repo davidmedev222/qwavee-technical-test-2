@@ -1,0 +1,62 @@
+/// Mixin for setting font size and line height.
+/// @param $size - The size of the text. Can be one of the following: xs, sm, base, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl
+
+@mixin text($size) {
+  @if $size == xs {
+    font-size: 0.75rem; /* 12px */
+    line-height: 0.8125rem; /* 13px */
+    letter-spacing: 0.03rem; /* 0.48px */
+  } @else if $size == sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5rem; /* 24px */
+    letter-spacing: 0.0563rem; /* 0.90px */
+  } @else if $size == base {
+    font-size: 1rem; /* 16px */
+    line-height: 1.75rem; /* 28px */
+    letter-spacing: 0.04rem; /* 0.64px */
+  } @else if $size == lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.25rem; /* 20px */
+    letter-spacing: 0.045rem; /* 0.72px */
+  } @else if $size == xl {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.375rem; /* 22px */
+    letter-spacing: 0.0437rem; /* 0.70px */
+  } @else if $size == 2xl {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.625rem; /* 26px */
+    letter-spacing: 0.0525rem; /* 0.84px */
+  } @else if $size == 3xl {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.0625rem; /* 33px */
+    letter-spacing: 0.075rem; /* 1.2px */
+  } @else if $size == 4xl {
+    font-size: 2.125rem; /* 34px */
+    line-height: 2.375rem; /* 38px */
+    letter-spacing: 0.0875rem; /* 1.4px */
+  } @else if $size == 5xl {
+    font-size: 2.5rem; /* 40px */
+    line-height: 2.75rem; /* 44px */
+    letter-spacing: 0.1rem; /* 1.6px */
+  } @else if $size == 6xl {
+    font-size: 4.125rem; /* 66px */
+    line-height: 4.8125rem; /* 77px */
+    letter-spacing: 0.165rem; /* 2.64px */
+  } @else if $size == 7xl {
+    font-size: 4.25rem; /* 68px */
+    line-height: 4.75rem; /* 76px */
+    letter-spacing: 0.1688rem; /* 2.7px */
+  } @else {
+    @error "Unknown size #{$size}, please enter a value correct.";
+  }
+}
+
+/// Mixin for applying line clamping.
+/// @param $number - The maximum number of lines an element should display.
+
+@mixin line-clamp($number) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}
