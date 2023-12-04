@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Heading, HightlightText, Stat, StatGroup } from '@/components'
+import { BackgroundImage, Button, ButtonGroup, Heading, HightlightText, Stat, StatGroup } from '@/components'
 import Image from 'next/image'
 
 function HeroSection() {
@@ -24,6 +24,11 @@ function HeroSection() {
         <Stat value={<HightlightText>200+</HightlightText>} title='Project Finished' />
         <Stat value='500+' title='Happy customer' />
       </StatGroup>
+      <BackgroundImage
+        className='hero__background'
+        src='/assets/hero-desktop.webp'
+        alt='Person with virtual reality glasses'
+      />
     </section>
   )
 }

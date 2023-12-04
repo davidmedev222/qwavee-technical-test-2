@@ -13,6 +13,7 @@
   gap: 1rem;
   max-width: $screen-2xl;
   margin: 0 auto;
+  position: relative;
 
   &__title {
     grid-area: title;
@@ -50,6 +51,9 @@
     grid-area: stats;
   }
 
+  &__background {
+    display: none;
+  }
   @media screen and (min-width: $screen-xsm) {
     &__image {
       display: none;
@@ -68,11 +72,6 @@
         'stats .'
         'marquee marquee';
       grid-template-columns: repeat(2, 1fr);
-      background-image: url('/assets/hero-desktop.webp');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: top;
-      mix-blend-mode: color-dodge;
     }
 
     &__description {
@@ -81,6 +80,11 @@
 
     &__marquee {
       transform: translateY(0);
+    }
+
+    &__background {
+      display: block;
+      object-position: top;
     }
   }
 

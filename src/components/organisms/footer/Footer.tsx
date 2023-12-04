@@ -1,6 +1,5 @@
-import { Logo, NavLink } from '@/components'
+import { BackgroundImage, Logo, NavLink } from '@/components'
 import { FooterLinks } from '@/utils'
-import Image from 'next/image'
 import Link from 'next/link'
 
 function Footer() {
@@ -62,11 +61,8 @@ function Footer() {
         </li>
       </ul>
       <p className='footer__copyright'>© Copyright 2023, All Rights Reserved by board.</p>
-      <Image
+      <BackgroundImage
         className='footer__background'
-        fill
-        quality={100}
-        sizes='100vw'
         src='/assets/footer-gradient.webp'
         alt='Image of person with 3d viewer'
       />

@@ -1,3 +1,4 @@
+export { default as BackgroundImage } from './atoms/background/BackgroundImage'
 export { default as Button } from './atoms/button/Button'
 export { default as Heading } from './atoms/heading/Heading'
 export { default as Logo } from './atoms/logo/Logo'

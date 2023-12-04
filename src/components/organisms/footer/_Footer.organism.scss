@@ -86,10 +86,7 @@
   }
 
   &__background {
-    z-index: -1;
-    object-fit: cover;
     object-position: 25%;
-    mix-blend-mode: color-dodge;
   }
 
   @media screen and (min-width: $screen-md) {
