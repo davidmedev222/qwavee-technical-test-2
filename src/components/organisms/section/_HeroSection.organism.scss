@@ -1,0 +1,107 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.hero {
+  display: grid;
+  grid-template-areas:
+    'title'
+    'description'
+    'image'
+    'marquee'
+    'buttons'
+    'stats';
+  gap: 1rem;
+  max-width: $screen-2xl;
+  margin: 0 auto;
+
+  &__title {
+    grid-area: title;
+    padding: 0 1.875rem;
+  }
+
+  &__description {
+    @include text(base);
+    grid-area: description;
+    padding: 0 1.875rem;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    mix-blend-mode: color-dodge;
+    max-height: 31rem;
+  }
+
+  &__marquee {
+    grid-area: marquee;
+    width: 100%;
+    background-color: red;
+    height: 3rem;
+    transform: translateY(-2rem);
+  }
+
+  &__buttons {
+    grid-area: buttons;
+    margin: 0 0 2.5rem 0;
+  }
+
+  &__stats {
+    grid-area: stats;
+  }
+
+  @media screen and (min-width: $screen-xsm) {
+    &__image {
+      display: none;
+    }
+    &__marquee {
+      transform: translateY(-1rem);
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    & {
+      grid-template-areas:
+        'title .'
+        'description .'
+        'buttons .'
+        'stats .'
+        'marquee marquee';
+      grid-template-columns: repeat(2, 1fr);
+      background-image: url('/assets/hero-desktop.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      mix-blend-mode: color-dodge;
+    }
+
+    &__description {
+      @include text(lg);
+    }
+
+    &__marquee {
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    &__title {
+      padding: 0 0 0 6.25rem;
+    }
+
+    &__description {
+      padding: 0 0 0 6.25rem;
+    }
+
+    &__buttons {
+      padding: 0 0 0 6.25rem;
+      margin: 2rem 0;
+    }
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    & {
+      padding: 3rem 0;
+    }
+  }
+}

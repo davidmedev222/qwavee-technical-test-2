@@ -6,6 +6,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 1.875rem;
+  max-width: $screen-2xl;
+  margin: 0 auto;
 
   @media screen and (min-width: $screen-sm) {
     flex-wrap: nowrap;

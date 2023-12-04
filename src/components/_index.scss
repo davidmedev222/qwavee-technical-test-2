@@ -1,5 +1,11 @@
 @use './atoms/logo/Logo.atom';
 @use './atoms/nav/NavLink.atom';
 @use './atoms/menu/HamburgerMenu.atom';
+@use './atoms/heading/Heading.atom';
+@use './atoms/button/Button.atom';
+@use './atoms/stats/Stat.atom';
+@use './atoms/text/HightlightText.atom';
 @use './molecules/nav/Nav.molecule';
+@use './molecules/group/Group.molecule';
 @use './organisms/header/Header.organism';
+@use './organisms/section/HeroSection.organism';

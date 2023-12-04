@@ -1,0 +1,12 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.heading {
+  @include text(5xl);
+  font-weight: 800;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $screen-md) {
+    @include text(7xl);
+  }
+}

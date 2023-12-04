@@ -1,0 +1,22 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.button {
+  @include text(xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  background-image: url('/assets/button-gradient.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem 2.375rem;
+
+  &--outline {
+    background-image: url('/assets/button-gradient-outline.webp');
+  }
+
+  @media screen and (min-width: $screen-md) {
+    @include text(xl);
+    padding: 1.625rem 4rem;
+  }
+}
