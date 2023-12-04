@@ -1,4 +1,4 @@
-import { Header } from '@/components'
+import { Footer, Header } from '@/components'
 import '@/styles/index.scss'
 import { nunito } from '@/utils'
 
@@ -17,6 +17,7 @@ function RootLayout({ children }: Props) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

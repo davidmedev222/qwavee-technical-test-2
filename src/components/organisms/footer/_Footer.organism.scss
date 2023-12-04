@@ -1,0 +1,124 @@
+@use '../../../styles/base/variables' as *;
+@use '../../../styles/utils/mixins' as *;
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    'logo'
+    'description'
+    'list'
+    'social'
+    'copyright';
+  gap: 1.25rem;
+  padding: 2.5rem 1.875rem;
+  max-width: $screen-2xl;
+  margin: 0 auto;
+  position: relative;
+
+  &__description {
+    @include text(base);
+    grid-area: description;
+  }
+
+  &__list {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.125rem 1.5625rem;
+    grid-area: list;
+    margin-top: 0.625rem;
+  }
+
+  &__item {
+    @include text(lg);
+    font-weight: 800;
+    text-transform: uppercase;
+    display: grid;
+    gap: 1.625rem;
+  }
+
+  &__links {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__link {
+    & a {
+      font-weight: 400;
+      text-align: start;
+      text-transform: capitalize;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    grid-area: social;
+    margin: 3.75rem 0;
+  }
+
+  &__icon a {
+    display: block;
+    border-radius: 1.75rem;
+    outline: 0.0625rem solid $color-gray-300;
+    padding: 0.5rem;
+
+    &:hover {
+      background-image: url('/assets/gradient-circle.webp');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      outline: none;
+    }
+
+    & svg {
+      fill: $color-white;
+    }
+  }
+
+  &__copyright {
+    @include text(sm);
+    text-align: center;
+    align-self: center;
+    grid-area: copyright;
+  }
+
+  &__background {
+    z-index: -1;
+    object-fit: cover;
+    object-position: 25%;
+    mix-blend-mode: color-dodge;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    & {
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas:
+        'logo list'
+        'description list'
+        'social copyright';
+      justify-items: start;
+      gap: 2rem 4.75rem;
+      padding: 8.625rem 6.25rem 3rem 6.25rem;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 0;
+    }
+
+    &__social {
+      margin: 7.5rem 0 0 0;
+    }
+
+    &__copyright {
+      margin: 7.5rem 0 0 0;
+    }
+
+    &__background {
+      object-position: 100%;
+    }
+  }
+}
