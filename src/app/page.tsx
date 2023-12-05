@@ -1,10 +1,11 @@
-import { FavoriteGamesSection, HeroSection } from '@/components'
+import { FavoriteGamesSection, HeroSection, TopGamesSection } from '@/components'
 
 function HomePage() {
   return (
     <main>
       <HeroSection />
       <FavoriteGamesSection />
+      <TopGamesSection />
     </main>
   )
 }

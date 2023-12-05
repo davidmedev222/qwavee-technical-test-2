@@ -1,0 +1,71 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.topgames {
+  display: grid;
+  gap: 1.875rem;
+  text-align: center;
+  padding: 2.5rem 0;
+  max-width: $screen-2xl;
+  margin: 0 auto;
+
+  &__title {
+    padding: 0 1.875rem;
+    max-width: $screen-md;
+    margin: 0 auto;
+  }
+
+  &__categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.75rem 1.875rem;
+    scroll-snap-type: x mandatory;
+
+    & {
+      scrollbar-color: $sb-thumb-color $sb-track-color;
+    }
+    &::-webkit-scrollbar {
+      width: $sb-size;
+      height: $sb-size;
+    }
+    &::-webkit-scrollbar-track {
+      background: $sb-track-color;
+      border-radius: 0.625rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $sb-thumb-color;
+      border-radius: 0.625rem;
+    }
+  }
+
+  &__category {
+    scroll-snap-align: center;
+    text-wrap: nowrap;
+  }
+
+  &__cards {
+    display: grid;
+    gap: 2.5rem;
+    padding: 0 1.875rem;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    &__cards {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 2.5rem 6.25rem;
+    }
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    &__categories {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

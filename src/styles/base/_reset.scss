@@ -19,9 +19,26 @@ html {
   font-feature-settings: normal;
   font-variation-settings: normal;
 }
+
 body {
   margin: 0;
   line-height: inherit;
+
+  & {
+    scrollbar-color: $sb-thumb-color $sb-track-color;
+  }
+  &::-webkit-scrollbar {
+    width: $sb-size;
+    height: $sb-size;
+  }
+  &::-webkit-scrollbar-track {
+    background: $sb-track-color;
+    border-radius: 0.625rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $sb-thumb-color;
+    border-radius: 0.625rem;
+  }
 }
 
 h1,
