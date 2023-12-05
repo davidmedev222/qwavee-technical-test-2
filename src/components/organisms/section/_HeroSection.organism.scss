@@ -14,6 +14,7 @@
   max-width: $screen-2xl;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 
   &__title {
     grid-area: title;
@@ -36,10 +37,16 @@
 
   &__marquee {
     grid-area: marquee;
-    width: 100%;
-    background-color: red;
-    height: 3rem;
-    transform: translateY(-2rem);
+    display: grid;
+    transform: translateY(-2rem) rotate(-1.9deg);
+    height: 3.125rem;
+    background-color: rgba($color-white, $alpha: 0.1);
+    backdrop-filter: blur(1.5625rem);
+    padding: 0.875rem 0;
+
+    & div {
+      overflow: hidden;
+    }
   }
 
   &__buttons {
@@ -49,17 +56,19 @@
 
   &__stats {
     grid-area: stats;
+    margin: 0 0 2.5rem 0;
   }
 
   &__background {
     display: none;
   }
+
   @media screen and (min-width: $screen-xsm) {
     &__image {
       display: none;
     }
     &__marquee {
-      transform: translateY(-1rem);
+      transform: translateY(-1rem) rotate(-1.9deg);
     }
   }
 
@@ -79,7 +88,9 @@
     }
 
     &__marquee {
-      transform: translateY(0);
+      transform: translateY(0) rotate(-1.9deg);
+      height: 5.625rem;
+      margin: 2rem 0;
     }
 
     &__background {
@@ -98,6 +109,11 @@
     }
 
     &__buttons {
+      padding: 0 0 0 6.25rem;
+      margin: 2rem 0;
+    }
+
+    &__stats {
       padding: 0 0 0 6.25rem;
       margin: 2rem 0;
     }

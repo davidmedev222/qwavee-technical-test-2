@@ -1,0 +1,27 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  @include text(base);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 1.5625rem;
+
+  &__image {
+    width: auto;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    & {
+      @include text(3xl);
+    }
+
+    &__image {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+}
