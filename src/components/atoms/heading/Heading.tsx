@@ -7,7 +7,7 @@ interface Props {
 }
 
 function Heading({ as = 'h1', children, className }: Props) {
-  const classes = clsx('heading', className)
+  const classes = clsx('heading', as === 'h2' && 'heading--h2', className)
   const HeadingTag = as
 
   return <HeadingTag className={classes}>{children}</HeadingTag>

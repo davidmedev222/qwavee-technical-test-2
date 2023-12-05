@@ -6,7 +6,17 @@
   font-weight: 800;
   text-transform: uppercase;
 
+  &--h2 {
+    @include text(4xl);
+  }
+
   @media screen and (min-width: $screen-md) {
-    @include text(7xl);
+    & {
+      @include text(7xl);
+    }
+
+    &--h2 {
+      @include text(6xl);
+    }
   }
 }
