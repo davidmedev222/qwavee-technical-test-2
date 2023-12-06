@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **📂 QWAVEE TECHNICAL TEST 2**
 
-## Getting Started
+## **📑 GUIA**
 
-First, run the development server:
+1. [Demo](#demo)
+2. [Instalación](#instalación)
+3. [Extra](#extra)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## **🚀DEMO**
+
+[https://qwavee-technical-test-2.vercel.app/](https://qwavee-technical-test-2.vercel.app/)
+
+## **👨‍💻INSTALACIÓN**
+
+1. Clonar repositorio github.
+
+```
+git clone https://github.com/davidmedev222/qwavee-technical-test-2.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Acceda a la carpeta creada en el paso 1 e instale las dependencias.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd qwavee-technical-test-2 && npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Ejecute el siguiente comando y visualice la url http://localhost:3000.
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## **📌EXTRA**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Explicar estrategias para mejorar el rendimiento :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Carga de recursos diferida: Una de las principales razones por las que un sitio web se hace pesado y costoso para el usuario es por su carga masiva de recursos, para evitar esto, se puede retrasar la carga de recursos no prioritarios, logrando reducir la carga inicial y mejorando la experiencia del usuario.
 
-## Deploy on Vercel
+   Por ejemplo, se puede retrasar la carga de scripts o imágenes que esten fuera de la vista del usuario.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Optimización de recursos: Otra manera de mejorar el rendimiento de un sitio web es con la optimización de recursos, logrando reducir el tamaño del mismo y mejorar los tiempos de carga.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Por ejemplo, se pueden comprimir, minificar y optimizar los recursos como imágenes, scripts, fuentes, y hojas de estilo para reducir su tamaño de manera notable.
+
+3. Almacenamiento en caché: Otra manera para mejorar el rendimiento es con el almacenamiento de recursos en caché, logrando reducir las solicitudes de recursos de manera notable.
+
+   Por ejemplo, se pueden almacenar en caché las solicitudes a una API, consiguiendo que si en algún lugar se realiza otra solicitud del mismo recurso, se obtenga lo almacenado en caché, evitando realizar múltiples solicitudes al servidor.
