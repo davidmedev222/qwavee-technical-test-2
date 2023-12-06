@@ -15,6 +15,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0) 75%, $color-violet-950);
 
   &__title {
     grid-area: title;
@@ -81,6 +82,7 @@
         'stats .'
         'marquee marquee';
       grid-template-columns: repeat(2, 1fr);
+      justify-items: flex-start;
     }
 
     &__description {

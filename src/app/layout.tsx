@@ -1,10 +1,9 @@
 import { Footer, Header } from '@/components'
 import '@/styles/index.scss'
-import { nunito } from '@/utils'
+import { baseMetadata, nunito } from '@/utils'
 
 export const metadata = {
-  title: 'Qwavee - Technical Test',
-  description: 'Qwavee Technical Test'
+  ...baseMetadata
 }
 
 interface Props {
