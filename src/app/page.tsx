@@ -1,7 +1,11 @@
+import { FavoriteGamesSection, HeroSection, TopGamesSection } from '@/components'
+
 function HomePage() {
   return (
     <main>
-      <h1>Hello World</h1>
+      <HeroSection />
+      <FavoriteGamesSection />
+      <TopGamesSection />
     </main>
   )
 }

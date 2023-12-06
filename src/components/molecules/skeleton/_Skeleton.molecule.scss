@@ -1,0 +1,35 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/utils/animations' as *;
+@use '../../../styles/base/variables' as *;
+
+.skeleton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  animation: pulse 2000ms infinite ease-in-out;
+  border-radius: 0.5rem;
+
+  &--categories {
+    width: 100%;
+    min-height: 2.75rem;
+    background-color: $color-gray-100;
+  }
+
+  &--cards {
+    width: 100%;
+    min-height: 27.375rem;
+    background-color: $color-gray-100;
+    max-width: 24.875rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &--categories {
+      min-height: 4.625rem;
+    }
+
+    &--cards {
+      min-height: 31.625rem;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use '../../../styles/base/variables' as *;
+
+.hamburger {
+  fill: $color-white;
+
+  @media screen and (min-width: $screen-sm) {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../../styles/base/variables' as *;
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.875rem;
+
+  &--stat {
+    gap: 1.375rem;
+
+    @media screen and (min-width: $screen-md) {
+      gap: 2rem;
+    }
+  }
+}

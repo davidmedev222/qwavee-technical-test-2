@@ -1,0 +1,29 @@
+@use '../../../styles/utils/mixins' as *;
+@use '../../../styles/base/variables' as *;
+
+.stat {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+
+  &__value {
+    @include text(xl);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include text(sm);
+    text-transform: capitalize;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &__value {
+      @include text(3xl);
+    }
+
+    &__title {
+      @include text(lg);
+    }
+  }
+}
