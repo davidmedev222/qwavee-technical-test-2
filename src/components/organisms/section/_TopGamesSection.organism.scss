@@ -49,9 +49,36 @@
     padding: 0 1.875rem;
   }
 
+  &__error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    background-color: $color-pink-500;
+    width: 100%;
+    min-height: 2.75rem;
+    @include text(xs);
+
+    &--cards {
+      min-height: 27.375rem;
+      grid-column: 1 / -1;
+    }
+  }
+
   @media screen and (min-width: $screen-sm) {
     &__cards {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &__error {
+      @include text(xl);
+      min-height: 4.625rem;
+
+      &--cards {
+        min-height: 31.625rem;
+      }
     }
   }
 

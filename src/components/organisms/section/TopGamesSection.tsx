@@ -1,30 +1,45 @@
-import { Button, Heading, HightlightText } from '@/components'
+'use client'
+import { Button, CardsSkeleton, CategoriesSkeleton, Heading, HightlightText } from '@/components'
 import Card from '@/components/molecules/card/Card'
-
-const cards = Array.from({ length: 7 })
+import { getCategories, getGamesByCategory } from '@/services'
+import { ERROR_MESSAGES_CODE } from '@/utils'
+import useSWR from 'swr'
 
 function TopGamesSection() {
+  const {
+    data: categories,
+    error: categoriesError,
+    isLoading: isLoadingCategories
+  } = useSWR('/categories', getCategories, { revalidateOnFocus: false })
+  const {
+    data: games,
+    error: gamesError,
+    isLoading: isLoadingGames
+  } = useSWR('/categories/1/cardsInfo', getGamesByCategory, { revalidateOnFocus: false })
+
+  const categoriesErrorMessage = ERROR_MESSAGES_CODE[categoriesError?.response?.status]
+  const gamesErrorMessage = ERROR_MESSAGES_CODE[gamesError?.response?.status]
+
   return (
     <section className='topgames'>
       <Heading className='topgames__title' as='h3'>
         Welcome to the top <HightlightText>games</HightlightText>
       </Heading>
       <div className='topgames__categories'>
-        <Button className='topgames__category'>Mewest Games</Button>
-        <Button className='topgames__category' variant='outline'>
-          Latest Games
-        </Button>
-        <Button className='topgames__category' variant='outline'>
-          Fight Games
-        </Button>
-        <Button className='topgames__category' variant='outline'>
-          Sport Games
-        </Button>
+        {categoriesError && <div className='topgames__error'>{categoriesErrorMessage}</div>}
+        {isLoadingCategories && <CategoriesSkeleton />}
+        {categories?.map((category) => (
+          <Button key={category.id} className='topgames__category'>
+            {category.name}
+          </Button>
+        ))}
       </div>
       <ul className='topgames__cards'>
-        {cards.map((_, index) => (
-          <li key={index}>
-            <Card />
+        {gamesError && <div className='topgames__error topgames__error--cards'>{gamesErrorMessage}</div>}
+        {isLoadingGames && <CardsSkeleton />}
+        {games?.map((game) => (
+          <li key={game.id}>
+            <Card game={game} />
           </li>
         ))}
       </ul>
