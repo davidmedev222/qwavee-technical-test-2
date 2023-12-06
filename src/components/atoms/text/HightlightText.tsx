@@ -1,4 +1,7 @@
 interface Props {
+  /**
+   * The children of the component.
+   */
   children: React.ReactNode
 }
 

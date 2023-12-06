@@ -2,6 +2,9 @@ import { NavLink } from '@/components'
 import { HeaderLinks } from '@/utils'
 
 interface Props {
+  /**
+   * Flag indicating whether the menu is shown or not.
+   */
   showMenu: boolean
 }
 

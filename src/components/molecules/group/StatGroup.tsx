@@ -1,7 +1,13 @@
 import clsx from 'clsx'
 
 interface Props {
+  /**
+   * The children of the component.
+   */
   children: React.ReactNode
+  /**
+   * The CSS class name for the component.
+   */
   className?: string
 }
 

@@ -3,6 +3,9 @@ import { Game } from '@/models'
 import Image from 'next/image'
 
 interface Props {
+  /**
+   * The game object containing information about the game.
+   */
   game: Game
 }
 

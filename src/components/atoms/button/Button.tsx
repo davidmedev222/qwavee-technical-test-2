@@ -1,8 +1,17 @@
 import clsx from 'clsx'
 
 interface Props {
+  /**
+   * The content to be rendered inside the component.
+   */
   children: React.ReactNode
+  /**
+   * The variant of the component. Set to 'outline' for an outlined button.
+   */
   variant?: 'outline'
+  /**
+   * The class name to be applied to the component.
+   */
   className?: string
 }
 

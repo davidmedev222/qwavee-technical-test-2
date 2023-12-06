@@ -1,5 +1,12 @@
 interface Props {
+  /**
+   * The value to be displayed in the Stat component.
+   * It can be either a string or a JSX element.
+   */
   value: string | JSX.Element
+  /**
+   * The title of the Stat component.
+   */
   title: string
 }
 

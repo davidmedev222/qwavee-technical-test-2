@@ -1,4 +1,7 @@
 interface Props {
+  /**
+   * Function to toggle the show menu state.
+   */
   toggleShowMenu: () => void
 }
 

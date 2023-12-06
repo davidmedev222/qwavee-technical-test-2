@@ -1,6 +1,9 @@
 import Link, { LinkProps } from 'next/link'
 
 interface Props extends LinkProps {
+  /**
+   * The content of the NavLink.
+   */
   children: React.ReactNode
 }
 

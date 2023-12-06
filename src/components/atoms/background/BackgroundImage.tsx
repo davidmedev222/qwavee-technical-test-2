@@ -3,6 +3,9 @@ import clsx from 'clsx'
 import Image, { ImageProps } from 'next/image'
 
 interface Props extends Omit<ImageProps, 'className' | 'sizes' | 'fill' | 'quality'> {
+  /**
+   * Additional CSS class name for the component.
+   */
   className?: string
 }
 
