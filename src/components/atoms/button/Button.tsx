@@ -13,12 +13,20 @@ interface Props {
    * The class name to be applied to the component.
    */
   className?: string
+  /**
+   * The click event handler for the button.
+   */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-function Button({ children, variant, className }: Props) {
+function Button({ children, variant, className, onClick }: Props) {
   const classes = clsx('button', variant === 'outline' && 'button--outline', className)
 
-  return <button className={classes}>{children}</button>
+  return (
+    <button onClick={onClick} className={classes}>
+      {children}
+    </button>
+  )
 }
 
 export default Button

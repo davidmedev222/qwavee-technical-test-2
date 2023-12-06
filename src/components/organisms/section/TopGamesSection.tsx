@@ -3,9 +3,11 @@ import { Button, CardsSkeleton, CategoriesSkeleton, Heading, HightlightText } fr
 import Card from '@/components/molecules/card/Card'
 import { getCategories, getGamesByCategory } from '@/services'
 import { ERROR_MESSAGES_CODE } from '@/utils'
+import { useState } from 'react'
 import useSWR from 'swr'
 
 function TopGamesSection() {
+  const [categorySelected, setCategorySelected] = useState('1')
   const {
     data: categories,
     error: categoriesError,
@@ -15,7 +17,16 @@ function TopGamesSection() {
     data: games,
     error: gamesError,
     isLoading: isLoadingGames
-  } = useSWR('/categories/1/cardsInfo', getGamesByCategory, { revalidateOnFocus: false })
+  } = useSWR(`/categories/${categorySelected}/cardsInfo`, getGamesByCategory, { revalidateOnFocus: false })
+
+  /**
+   * Change the selected category.
+   *
+   * @param {string} categoryID - The ID of the category to be selected.
+   */
+  function changeCategory(categoryID: string) {
+    setCategorySelected((state) => categoryID)
+  }
 
   const categoriesErrorMessage = ERROR_MESSAGES_CODE[categoriesError?.response?.status]
   const gamesErrorMessage = ERROR_MESSAGES_CODE[gamesError?.response?.status]
@@ -28,11 +39,19 @@ function TopGamesSection() {
       <div className='topgames__categories'>
         {categoriesError && <div className='topgames__error'>{categoriesErrorMessage}</div>}
         {isLoadingCategories && <CategoriesSkeleton />}
-        {categories?.map((category) => (
-          <Button key={category.id} className='topgames__category'>
-            {category.name}
-          </Button>
-        ))}
+        {categories?.map((category) => {
+          const variant = categorySelected !== category.id ? 'outline' : undefined
+          return (
+            <Button
+              key={category.id}
+              onClick={() => changeCategory(category.id)}
+              className='topgames__category'
+              variant={variant}
+            >
+              {category.name}
+            </Button>
+          )
+        })}
       </div>
       <ul className='topgames__cards'>
         {gamesError && <div className='topgames__error topgames__error--cards'>{gamesErrorMessage}</div>}
